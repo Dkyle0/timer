@@ -1,0 +1,43 @@
+.container {
+	margin: auto;
+	height: 100vh;
+	max-width: 390px;
+}
+
+a {
+	text-decoration: none;
+	color: #29a354;
+}
+
+.control {
+	max-width: 390px;
+	display: flex;
+	align-items: center;
+	margin: auto;
+	justify-content: space-between;
+	padding: 10px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	color: #29a354;
+}
+
+h1 {
+	color: white;
+	padding-left: 23px;
+	margin: 0;
+}
+
+.leftControlText {
+	font-size: 14px;
+	font-weight: 800;
+}
+
+.rightControlText {
+	font-size: 32px;
+	font-weight: 800;
+}
+
+hr {
+	margin: 14px 23px;
+	color: rgba(255, 255, 255, 0.2);
+}

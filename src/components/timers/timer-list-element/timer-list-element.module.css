@@ -1,0 +1,92 @@
+.timerItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 8px;
+	padding: 16px;
+	color: white;
+	max-width: 390px;
+	margin-bottom: 16px;
+}
+
+.timerDetails {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.timerTime {
+	font-size: 36px;
+	font-weight: bold;
+}
+
+.timerLabel {
+	font-size: 14px;
+	color: white;
+}
+
+.playButton,
+.pauseButton {
+	background-color: transparent;
+	border-radius: 50%;
+	width: 56px;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border: 2px solid;
+	transition: transform 0.3s ease;
+}
+
+.playButton {
+	border-color: #28a745;
+}
+
+.playButton svg {
+	fill: #28a745;
+	width: 56px;
+	height: 56px;
+}
+
+.pauseButton {
+	border-color: #f39c12;
+}
+
+.pauseButton svg {
+	fill: #f39c12;
+	width: 56px;
+	height: 56px;
+}
+
+.deleteButton svg {
+	fill: #dd363c;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.arrowButton {
+	margin-right: 8px;
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.delArea {
+	padding-left: 8px;
+	display: flex;
+	align-items: center;
+}
+
+.playButton:active,
+.pauseButton:active,
+.deleteButton:active {
+	transform: scale(0.9);
+}
+
+.buttonsContainer {
+	display: flex;
+	align-items: center;
+}

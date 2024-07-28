@@ -1,0 +1,35 @@
+@font-face {
+	font-family: 'ALSGorizont';
+	src: url('./fonts/alsgorizont-mediumexpanded.eot');
+	src:
+		url('./fonts/alsgorizont-mediumexpanded.eot?#iefix') format('embedded-opentype'),
+		url('./fonts/alsgorizont-mediumexpanded.woff2') format('woff2'),
+		url('./fonts/alsgorizont-mediumexpanded.woff') format('woff'),
+		url('./fonts/alsgorizont-mediumexpanded.ttf') format('truetype'),
+		url('./fonts/alsgorizont-mediumexpanded.svg#alsgorizont-mediumexpanded')
+			format('svg');
+}
+
+body {
+	background-color: #222;
+	margin: 0;
+	font-family:
+		'ALSGorizont',
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		'Roboto',
+		'Oxygen',
+		'Ubuntu',
+		'Cantarell',
+		'Fira Sans',
+		'Droid Sans',
+		'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

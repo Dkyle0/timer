@@ -1,0 +1,15 @@
+a {
+	text-decoration: none;
+	color: #29a354;
+}
+
+.control {
+	max-width: 390px;
+	display: flex;
+	align-items: center;
+	margin: auto;
+	justify-content: space-between;
+	padding: 23px 26px 0;
+	border-radius: 5px;
+	color: #29a354;
+}
