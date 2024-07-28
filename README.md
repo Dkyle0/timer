@@ -8,7 +8,7 @@ Timer App - это простое приложение для создания, 
 
 1. Клонируйте репозиторий на ваше локальное устройство:
     ```bash
-    git clone https://github.com/your-username/timer-app.git
+    git clone https://github.com/Dkyle0/timer.git
     ```
 2. Перейдите в директорию проекта:
     ```bash
