@@ -41,3 +41,61 @@ hr {
 	margin: 14px 23px;
 	color: rgba(255, 255, 255, 0.2);
 }
+
+.buttonContainer {
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+.button {
+	font-family: 'ALSGorizont';
+	font-size: 15px;
+	color: white;
+	font-weight: 800;
+	width: 161px;
+	height: 44px;
+	border: none;
+	border-radius: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition:
+		background-color 0.3s ease,
+		transform 0.3s ease;
+	box-shadow:
+		0 4px 4px rgba(0, 0, 0, 0.25),
+		inset 0 -4px 4px rgba(0, 0, 0, 0.2),
+		inset 0 4px 4px rgba(255, 255, 255, 0.2);
+	margin: 10px;
+	user-select: none;
+}
+
+.pauseButton {
+	background-color: #f9891c;
+}
+
+.pauseButton:hover {
+	background-color: #db7c1d;
+}
+
+.resetButton {
+	background-color: #757677;
+}
+
+.resetButton:hover {
+	background-color: #5a6268;
+}
+
+.playButton {
+	background-color: #28a745;
+}
+
+.button:active {
+	transform: scale(0.95);
+	box-shadow:
+		0 4px 8px rgba(0, 0, 0, 0.25),
+		inset 0 -2px 2px rgba(0, 0, 0, 0.2),
+		inset 0 2px 2px rgba(255, 255, 255, 0.2);
+}

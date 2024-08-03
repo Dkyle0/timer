@@ -4,16 +4,40 @@ import { ControlPanel } from '../control-panel/control-panel';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store';
 import { TimerListElement } from './timer-list-element/timer-list-element';
-import { deleteTimer } from '../store/reducers';
+import {
+	deleteTimer,
+	startAllTimers,
+	pauseAllTimers,
+	resetAllTimers,
+} from '../store/reducers';
+import { useState, useCallback } from 'react';
 
 export const Timers = () => {
+	const [isEnabled, setIsEnabled] = useState(false);
 	const timers = useSelector((state: RootState) => state.timers.timers);
 	const isEditing = !!useMatch('/timers/edit');
 	const dispatch = useDispatch();
 
-	const handleDelete = (id: number) => {
-		dispatch(deleteTimer(id));
-	};
+	const handleDelete = useCallback(
+		(id: number) => {
+			dispatch(deleteTimer(id));
+		},
+		[dispatch],
+	);
+
+	const handleResetTimers = useCallback(() => {
+		dispatch(resetAllTimers());
+		setIsEnabled(false);
+	}, [dispatch]);
+
+	const handleStartPauseTimers = useCallback(() => {
+		if (isEnabled) {
+			dispatch(pauseAllTimers());
+		} else {
+			dispatch(startAllTimers());
+		}
+		setIsEnabled(!isEnabled);
+	}, [dispatch, isEnabled]);
 
 	return (
 		<div className={styles.container}>
@@ -44,6 +68,22 @@ export const Timers = () => {
 					/>
 				))}
 			</div>
+			{timers.length > 0 && (
+				<div className={styles.buttonContainer}>
+					<button
+						className={`${styles.button} ${isEnabled ? styles.pauseButton : styles.playButton}`}
+						onClick={handleStartPauseTimers}
+					>
+						{isEnabled ? 'Пауза' : 'Старт'}
+					</button>
+					<button
+						className={`${styles.button} ${styles.resetButton}`}
+						onClick={handleResetTimers}
+					>
+						Сбросить
+					</button>
+				</div>
+			)}
 		</div>
 	);
 };

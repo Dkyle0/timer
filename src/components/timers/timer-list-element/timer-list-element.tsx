@@ -3,7 +3,7 @@ import { ReactComponent as PlayIcon } from '../../../assets/play-icon.svg';
 import { ReactComponent as PauseIcon } from '../../../assets/pause-icon.svg';
 import { ReactComponent as DeleteIcon } from '../../../assets/dell-icon.svg';
 import { ReactComponent as ArrowIcon } from '../../../assets/arrow-icon.svg';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { UseTimer } from '../../hooks/useTime';
 import { handleStartPause } from '../../utils/handleStartPause';
 import { useNavigate } from 'react-router-dom';
@@ -34,14 +34,20 @@ const displayTime = (time: number) => {
 export const TimerListElement = ({
 	id,
 	time,
+	isEnabled,
 	isEditing,
 	onDelete,
 }: ITimerListElement) => {
 	const [elementTime, setElementTime] = useState(time || 0);
-	const [elementIsEnabled, setElementIsEnabled] = useState(false);
+	const [elementIsEnabled, setElementIsEnabled] = useState(isEnabled);
 	const navigate = useNavigate();
 
 	UseTimer(elementIsEnabled, elementTime, setElementTime, setElementIsEnabled);
+
+	useEffect(() => {
+		setElementTime(time);
+		setElementIsEnabled(isEnabled);
+	}, [time, isEnabled]);
 
 	return (
 		<>
