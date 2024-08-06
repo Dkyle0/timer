@@ -11,10 +11,11 @@ import {
 	resetAllTimers,
 } from '../store/reducers';
 import { useState, useCallback } from 'react';
+import { StandartButton } from '../standart-button/standart-button';
 
 export const Timers = () => {
-	const [isEnabled, setIsEnabled] = useState(false);
 	const timers = useSelector((state: RootState) => state.timers.timers);
+	const [isEnabled, setIsEnabled] = useState(true);
 	const isEditing = !!useMatch('/timers/edit');
 	const dispatch = useDispatch();
 
@@ -70,18 +71,18 @@ export const Timers = () => {
 			</div>
 			{timers.length > 0 && (
 				<div className={styles.buttonContainer}>
-					<button
-						className={`${styles.button} ${isEnabled ? styles.pauseButton : styles.playButton}`}
-						onClick={handleStartPauseTimers}
+					<StandartButton
+						extendedStyle={isEnabled ? styles.pauseButton : styles.playButton}
+						handleClick={handleStartPauseTimers}
 					>
 						{isEnabled ? 'Пауза' : 'Старт'}
-					</button>
-					<button
-						className={`${styles.button} ${styles.resetButton}`}
-						onClick={handleResetTimers}
+					</StandartButton>
+					<StandartButton
+						extendedStyle={styles.resetButton}
+						handleClick={handleResetTimers}
 					>
 						Сбросить
-					</button>
+					</StandartButton>
 				</div>
 			)}
 		</div>

@@ -45,7 +45,9 @@ export const TimerListElement = ({
 	UseTimer(elementIsEnabled, elementTime, setElementTime, setElementIsEnabled);
 
 	useEffect(() => {
-		setElementTime(time);
+		if (time === 0) {
+			setElementTime(time);
+		}
 		setElementIsEnabled(isEnabled);
 	}, [time, isEnabled]);
 

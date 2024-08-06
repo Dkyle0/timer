@@ -6,6 +6,7 @@ import { UseTimer } from '../../hooks/useTime';
 import { handleStartPause } from '../../utils/handleStartPause';
 import { ControlPanel } from '../../control-panel/control-panel';
 import styles from './timer.module.css';
+import { StandartButton } from '../../standart-button/standart-button';
 
 export const Timer = () => {
 	const { id } = useParams<{ id: string }>();
@@ -78,18 +79,18 @@ export const Timer = () => {
 					)} : ${(time % 60).toString().padStart(2, '0')}`}</div>
 			</div>
 			<div className={styles.buttonContainer}>
-				<button
-					className={`${styles.button} ${styles.pauseButton}`}
-					onClick={() => handleStartPause(time, setIsEnabled)}
+				<StandartButton
+					extendedStyle={isEnabled ? styles.pauseButton : styles.playButton}
+					handleClick={() => handleStartPause(time, setIsEnabled)}
 				>
 					{!isEnabled ? 'Возобновить' : 'Пауза'}
-				</button>
-				<button
-					className={`${styles.button} ${styles.resetButton}`}
-					onClick={handleResetTimer}
+				</StandartButton>
+				<StandartButton
+					handleClick={handleResetTimer}
+					extendedStyle={styles.resetButton}
 				>
 					Отмена
-				</button>
+				</StandartButton>
 			</div>
 		</div>
 	);
